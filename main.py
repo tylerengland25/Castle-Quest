@@ -1,5 +1,6 @@
 from room import Room
 from exits import Exit
+import random
 
 
 def initialize_castle():
@@ -70,6 +71,10 @@ def main():
     room = initialize_castle()
     print("You enter a castle...\n")
     while True:
+        # Check for death
+        if random.randint(1, 100) > 98:
+            print("""GAME OVER.
+            You died of a random heart attack :(""")
         room.entered_room()
 
         # Check for treasure
